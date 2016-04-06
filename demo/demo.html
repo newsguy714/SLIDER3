@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="css/style.css" rel="stylesheet" media="screen" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:700,300' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Brandt jQuery slideshow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../responsiveslides.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="../responsiveslides.min.js"></script>
+  <script src="../github-files.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(document).ready(function() {
+    $('.explainer').hide();
+    });//docread
+    
+    $(function () {
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+
+        before: function () {
+            var currentSlide = $("." + this.namespace + "1_on").attr("id");
+            console.log("Started animating from '#" + currentSlide + "' to the next");
+          },
+          after: function () {
+            var currentSlide = $("." + this.namespace + "1_on").attr("id");
+            console.log("Stopped animating and you are seeing '#" + currentSlide + "'");
+          }, 
+
+          before: function () { 
+            // If we are seeing the 1st slide
+            if ($("#" + this.namespace + "1_s0").hasClass(this.namespace + "1_on")) {
+              console.log("First slide started animating");
+              $('#slide1').show();
+              $('#slide2').hide();
+              $('#slide3').hide();
+              $('#slide4').hide();
+              $('#slide5').hide();
+            }        
+            // If we are seeing the 2nd slide
+            if ($("#" + this.namespace + "1_s1").hasClass(this.namespace + "1_on")) {
+              console.log("Second slide started animating");
+              $('#slide1').hide();
+              $('#slide2').show();
+              $('#slide3').hide();
+              $('#slide4').hide();
+              $('#slide5').hide();
+            }
+            //if we are seeing the 3rd slide
+            if ($("#" + this.namespace + "1_s2").hasClass(this.namespace + "1_on")) {
+              console.log("First slide started animating");
+              $('#slide1').hide();
+              $('#slide2').hide();
+              $('#slide3').show();
+              $('#slide4').hide();
+              $('#slide5').hide();
+            }        
+            //If we are seeing the 4th slide
+            if ($("#" + this.namespace + "1_s3").hasClass(this.namespace + "1_on")) {
+              console.log("First slide started animating");
+              $('#slide1').hide();
+              $('#slide2').hide();
+              $('#slide3').hide();
+              $('#slide4').show();
+              $('#slide5').hide();
+            }
+            //If We are seeing the 5th slide        
+            if ($("#" + this.namespace + "1_s4").hasClass(this.namespace + "1_on")) {
+              console.log("First slide started animating");
+              $('#slide1').hide();
+              $('#slide2').hide();
+              $('#slide3').hide();
+              $('#slide4').hide();
+              $('#slide5').show();
+            }        
+          }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="entire-container">
+  <div id="wrapper">
+    <h1>5 active drug corners in Philly</h1>
+
+  <h3 style= "font-family: 'Lato'; font-size: 130%; font-weight: 700";>By Joe Brandt <span style="font-weight: 300;"> | 9 March 2016</span></h3>
+
+<p> Enterprising journalists in the city have focused on poverty and unemployment as factors spurring a rise in the city's drug trade.</p>
+
+<p>"They are selling drugs in the shadows of closed-down factories that used to employ their parents and grandparents," Penn anthropologist Philippe Bourgois told the Inquirer in 2010. "You'd almost have to be abnormal not to go into the drug trade."</p>
+
+<p>NOTE: Captions for the following slider are only functional when moving the arrows to the right.</p>
+
+
+<p class="explainer" id="slide1">ARGYLE & WESTMORELAND: "IF EVERY BLOCK IS A story, then the 3300 block of Argyle Street is a novel," <a href="http://www.philly.com/philly/news/A_crumbling_block_drowning_in_debt.html">Daily News reporter Barbara Laker writes</a>, in a story about how a community wants to take back its block from drug dealers. The 3300 block of Argyle, seen here on Google Maps, has suffered from blight, abandonment and absentee landlording, Laker writes.</a></p>
+<p class="explainer" id="slide2">THIRD & CAMBRIA: A family block, Volk says, but one still awash in the drug trade. It's situated a block away from the infamous Third and Indiana, where former <i>Inquirer</i> reporter Steve Lopez based <a href="https://en.wikipedia.org/wiki/Third_and_Indiana">a crime novel about the city's drug trade.</a></p>
+<p class="explainer" id="slide3">MUTTER & SOMERSET: Near residential blocks, but the alley near the graffitied wall is where Volk saw dealers congregating or scrambling away from 24th District Philadelphia Police.</p>
+<p class="explainer" id="slide4">SOMERSET & B: A sort of throughway from "The Badlands" back to Kensington Avenue, where people can take the Market-Frankford El to return home. The warehouses and general lack of regular use in this block makes it a popular place for illicit activities, Volk says.</p>
+<p class="explainer" id="slide5">KENSINGTON & SOMERSET: By far the most "hopping" corner on the open-air drug market in Kensington, Volk says, and just a short walk from Kensington and Allgheny, a transportation hub of sorts.</p>
+
+    <!-- Slideshow 4 -->
+    <div class="callbacks_container">
+      <ul class="rslides" id="slider4">
+        <li>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459736673336!6m8!1m7!1sXLY0MtZ4sQTzv_B0jSTYtA!2m2!1d39.99143466818099!2d-75.12260370530727!3f46.7741487858021!4f-7.776278370732442!5f0.4000000000000002" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p class="caption">Kensington and Somerset</p>
+        </li>
+        <li>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459737901533!6m8!1m7!1sqISXEStzeQyTwm1xqZGoEA!2m2!1d39.99788647257592!2d-75.111894649619!3f288.7442901039592!4f2.762524623347616!5f1.9587109090973311" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p class="caption">Argyle and Westmoreland</p>
+        </li>
+        <li>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459738061068!6m8!1m7!1sRGy2KLmY0mhduoJ8sRWw_w!2m2!1d39.99479392709242!2d-75.13661682002898!3f345.66493405893556!4f-2.1585669089553647!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p class="caption">3rd and Cambria</p>
+        </li>
+        <li>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459738475656!6m8!1m7!1sHkQY9HIwk8JOOk2KljkVXQ!2m2!1d39.99279813440403!2d-75.13300963057534!3f229.09990401484083!4f-6.866921228832979!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p class="caption">Mutter and Somerset</p>
+        </li>
+        <li>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459844337540!6m8!1m7!1si0-bYw06WS35J1Gf4zjH9Q!2m2!1d39.99222707687779!2d-75.12871905925502!3f94.03!4f-5.890000000000001!5f0.5970117501821992" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p class="caption">Somerset and B</p>
+        </li>
+      </ul>
+
+
+
+    </div><!--callbacks-->
+  </div><!--wrapper-->
+
+
+<p>Across the city, certain destinations are studies in poverty. Arrest statistics show where people are most commonly cited for drug possession or for dealing.</p>
+
+<p>Most of those locations are in Kensington or Fairhill, or the area between (colloquially called "The Badlands.") Steve Volk, a journalist who compiled <a href="http://www.phawker.com/2011/08/23/special-report-the-top-10-drug-corners-2011/">a list of prominent city drug corners</a> for Phawker and <i>Philadelphia Weekly</i>, stressed that work was being done to remove drugs from these communities.</p>
+
+<a href="http://www.phawker.com/2011/08/23/special-report-the-top-10-drug-corners-2011/"><img src="https://lh4.googleusercontent.com/xISM1R_A0Mx-SITHtVC7DKPSvdudOOGwxCMIaiysRSbOOGrZ99orAj3CnWZcxQ02gkHO7fts6qZCarf56BXX7v8giGj_2-U2N528Su9wCvcqtAb3qM0"></a>
+
+
+<p>Still, Volk writes, it was not uncommon to see teenagers "slinging" drugs, most commonly heroin but also crack and PCP-coated cigarettes, with young children acting as lookouts for patroling police.</p>
+
+<p>"And like all illicit economies, the drug trade begets a brutal gangsterism whose stock in trade is violence — violence on an industrial scale. The statistics are as astonishing as they are appalling. 'We’ve had 16,000 shootings here in the last 10 years,'' says Assistant U.S. Attorney Rob Reed. “Sixteen thousand!” That averages out to four Philadelphians being shot every day, or one citizen every six hours.  Since 2008, more Americans have been murdered in Philadelphia than killed in Iraq."</p>
+
+
+<p>SOURCES: Phawker, Wikipedia, Philadelphia Daily News<p>
+
+<iframe src="http://newsguy714.github.io/NEWSQUIZ/"></iframe>
+
+
+
+</div> <!--entire-->
+
+</body>
+</html>
